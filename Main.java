@@ -1,23 +1,19 @@
 public class Main {
     public static void main(String[] args) {
 
-        String message;
-
         if (args.length == 0) {
-            message = "World";
-        } else {
-            StringBuilder names = new StringBuilder();
-
-            for (int i = 0; i < args.length; i++) {
-                names.append(args[i]);
-                if (i < args.length - 1) {
-                    names.append(", ");
-                }
-            }
-
-            message = names.toString();
+            System.out.println("Hello, World!");
+            return;
         }
 
-        System.out.println("Hello " + message);
+        StringBuilder names = new StringBuilder();
+
+        for (String name : args) {
+            names.append(name).append(", ");
+        }
+
+        names.setLength(names.length() - 2);
+
+        System.out.println("Hello, " + names + "!");
     }
 }
